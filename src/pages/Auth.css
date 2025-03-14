@@ -1,0 +1,98 @@
+/* Auth pages (Login & Signup) styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #5f9fff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.auth-container h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+}
+
+.auth-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-container input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.auth-container button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff7e5f, #5f9fff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-container button:hover {
+    background: linear-gradient(135deg, #5f9fff, #ff7e5f);
+    transform: translateY(-2px);
+}
+
+.auth-container p {
+    color: white;
+    margin-top: 20px;
+}
+
+.auth-container a {
+    color: #5f9fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* Google Login Button Styling */
+.google-login-container {
+    margin-top: 20px;
+}
+
+.error-message {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+} 

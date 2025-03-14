@@ -1,0 +1,413 @@
+/* Full-page gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #121212;
+    min-height: 100vh;
+}
+
+/* Main container */
+.email-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+}
+
+/* Left Sidebar - Email History */
+.sidebar {
+    width: 250px;
+    background: #1a1f35;
+    border-right: 1px solid rgba(95, 159, 255, 0.15);
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+/* Dropdown styling */
+.dropdown {
+    margin-bottom: 16px;
+}
+
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(95, 159, 255, 0.1);  /* Using the blue from gradient */
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.dropdown-header:hover {
+    background: rgba(95, 159, 255, 0.15);
+}
+
+.dropdown-header.active {
+    background: rgba(95, 159, 255, 0.15);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dropdown-arrow {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.email-history {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #151929;  /* Slightly lighter than sidebar background */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.email-history li {
+    padding: 12px 16px;
+    margin-bottom: 0;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    color: white;
+    border-bottom: 1px solid rgba(95, 159, 255, 0.1);
+}
+
+.email-history li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.email-history li:hover {
+    background: rgba(95, 159, 255, 0.1);
+}
+
+.email-history li div:first-child {
+    margin-bottom: 4px;
+}
+
+.email-history li div:last-child {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Main content - Email Compose */
+.main-content {
+    flex: 1;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #ff7e5f, #5f9fff);
+    position: relative;
+    min-width: 690px;
+}
+
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.header, form {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 5px 0 0 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Form styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+form textarea {
+    height: 200px;
+    resize: vertical;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #ff7e5f, #5f9fff);
+    color: white;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #5f9fff, #ff7e5f);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+.logout-button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logout-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* File upload */
+.file-input-container {
+    margin: 10px 0;
+}
+
+input[type="file"] {
+    padding: 8px;
+    font-size: 14px;
+    color: white;
+    background: transparent;
+}
+
+/* Right Sidebar - About the App */
+.right-sidebar {
+    width: 250px;
+    background: linear-gradient(50deg, #5f9fff,  #ff7e5f);
+    border-left: 1px solid rgba(95, 159, 255, 0.15);
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.right-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.right-sidebar h3,
+.about-content,
+.developer-info {
+    position: relative;
+    z-index: 1;
+}
+
+.right-sidebar h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.about-content {
+    color: white;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.about-content h4 {
+    color: #5f9fff;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.about-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+
+.developer-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.developer-info h4 {
+    color: #5f9fff;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.developer-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Remove these authorization-related styles */
+.authorize-button,
+.authorize-button:hover,
+.auth-error {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #202124;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.modal-content p {
+    margin-bottom: 1rem;
+}
+
+.modal-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.modal-content li {
+    margin-bottom: 0.5rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #333;
+    color: white;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.modal-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.modal-buttons button:first-child {
+    background: transparent;
+    border: 1px solid #666;
+    color: white;
+}
+
+.modal-buttons button:last-child {
+    background: linear-gradient(45deg, #2196F3, #21CBF3);
+    color: white;
+}
+
+.modal-buttons button:hover {
+    opacity: 0.9;
+}
+
