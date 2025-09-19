@@ -1,4 +1,4 @@
-# ✉️ MailCraft - Modern Email Sender Application
+# ✉️ QuickMail - Modern Email Sender Application
 
 A powerful, user-friendly email sending application built with React that allows users to compose, customize, and send professional emails with ease. Perfect for businesses, marketers, and individuals who need reliable email delivery.
 
